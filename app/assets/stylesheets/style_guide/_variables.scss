@@ -1,0 +1,136 @@
+/**
+ *
+ * Variables - Colors, Brand, Typography.
+ =================================================
+ *
+ */
+
+
+/**
+ * Color
+ */
+$gray-color-darker:  			#3E3E3E;
+$gray-color-darkish:      #5E5E5E;
+$gray-color-dark:    			#575757;
+$gray-color:         			#797979;
+$gray-color-light:   			#888888;
+$gray-color-lightish:     #828282;
+$gray-color-lighter: 			#909090;
+$gray-color-lightest:     #CFCFCF;
+$white-color-dark:        #F1F1F1;
+$white-color-darker:      #BDBDBD;
+
+/**
+ * Brand
+ */
+$brand-color-primary: 			#51B6C4;
+$brand-color-primary-light: 	#51B7C5;
+$brand-color-primary-lighter: 	#64C8D6;
+
+$brand-color-primary-dark: 	    darken($brand-color-primary, 10%);
+$brand-color-primary-darker:    darken($brand-color-primary, 20%);
+
+
+$brand-color-secondary: 		#237C88;
+$brand-color-secondary-dark: 	#19626C;
+$brand-color-secondary-darker: 	#0E515A;
+
+$brand-color-secondary-light: 	lighten($brand-color-secondary, 10%);
+$brand-color-secondary-lighter: lighten($brand-color-secondary, 20%);
+$brand-color-light-background: #DAEFF2;
+
+
+
+/**
+ * Status Colors
+ */
+
+$draft-color: #767C93; // Dark Gray
+$sent-color: #ACBDE1; // Dull Blue
+$pending-color: #609DF8; // Blue
+$completed-color: #75C16F; // Green
+$available-color: $brand-color-primary; // Green
+$viewed-color: $completed-color;
+$declined-color: #FF827F; // Red
+
+/**
+ * Notice & Banner Colors
+ */
+
+$notice-color: #4db7c6;
+$warning-color: #faf1dc;
+$error-color: #eb443b;
+
+$block-styles: (
+  info: (
+    background: $notice-color,
+    color: #fff,
+  ),
+  warn: (
+    background: $warning-color,
+    color: #5f5e5e,
+  ),
+  error: (
+    background: $error-color,
+    color: #fff,
+  ),
+  success: (
+    background: $completed-color,
+    color: #fff,
+  )
+);
+
+@mixin callout-block-style($type: 'info') {
+  $current-style: map-get($block-styles, $type);
+  $background-color: map-get($current-style, 'background');
+  $text-color: map-get($current-style, 'color');
+
+  background: $background-color;
+  color: $text-color;
+  border: 1px solid darken($background-color, 20%);
+  a {
+    color: $text-color;
+    text-decoration: underline;
+    &:hover {
+      color: darken($text-color, 20%);
+    }
+  }
+}
+
+@mixin notice-text-styling {
+  &, &.info { @include callout-block-style('info'); }
+  &.warn { @include callout-block-style('warn'); }
+  &.error { @include callout-block-style('error'); }
+  &.success { @include callout-block-style('success'); }
+}
+
+/**
+ * Typography
+ */
+$font-family-sans-serif:    'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-serif:         Georgia, 'Times New Roman', Times, serif;
+$font-family-monospace:     Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+$font-family-base:          'proxima-nova', 'Proxima Nova', 'Open Sans', $font-family-sans-serif;
+$font-size-base:          	13px + 1px;
+
+$link-color:				$brand-color-primary;
+$link-color-dark:			darken($link-color, 20%);
+
+$error-color: #FF0039;
+$required-color: #F31818;
+
+
+/**
+ * Fields
+ */
+
+$highlight: rgba(#FDF47E, 0.7);
+$dark-highlight: #E2DB8B;
+$field-highlight-0: rgba(#FDF47E, 0.7);
+$field-highlight-1: #E8EFF8;
+$field-highlight-2: #FFE8F5;
+$field-highlight-3: rgba(#00FFE8, 0.1);
+$field-highlight-4: #FFF3E1;
+$field-highlight-5: #EAFFEC;
+$field-highlight-6: #E5F9FF;

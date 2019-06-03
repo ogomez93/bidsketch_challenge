@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Docsketch Style Guide</title>
+    <%= render 'head' %>
+  </head>
+
+  <body>
+      <!-- page content -->
+      <style>
+          .styleguide{
+              padding-top: 60px;
+              padding-bottom: 60px;
+          }
+
+          .styleguide > div > h1{
+              text-align: right;
+              font-weight: bold;
+          }
+          .styleguide hr
+          {
+              padding: 10px 0 40px 0;
+          }
+
+          .styleguide .row{
+              padding-bottom: 60px;
+          }
+
+          .styleguide .colors,
+          .styleguide .colors li{
+              width: 100%;
+          }
+          .styleguide .colors li:nth-child(2n) {
+              margin-right: 0px;
+          }
+          .styleguide .colors li {
+              position: relative;
+              color: #FFF;
+              padding: 40px;
+              width: 48.28%;
+              height: 170px;
+              float: left;
+              margin-right: 20px;
+              margin-bottom: 20px;
+          }
+          .styleguide .colors li:before{
+              content: attr(bg-color);
+              width: 200px;
+              height: 40px;
+              margin-right: 40px;
+              display:inline-block;
+          }
+
+          .styleguide .grid .row{
+              padding-bottom: 40px;
+          }
+          .styleguide .grid.grid.grid  [class*="col"]{
+              text-align: center;
+              background-color: rgba(100, 200, 214, 0.15);
+              border: 1px solid rgba(100, 200, 214, 0.4);
+          }
+
+          .styleguide pre{
+              font-family: "Courier", monospace;
+              font-size: 0.8em;
+              margin: 0 0 1.2em 0;
+              overflow: auto;
+              padding: 2.5em;
+              border: 1px solid #ddd;
+              white-space: pre;
+              word-wrap: normal;
+              background: #f9f9f9;
+
+              line-height: 180%;
+          }
+
+          .styleguide .grid .row{
+              padding-bottom: 0px;
+              margin-bottom: 0px;
+          }
+
+          .styleguide{
+              padding-bottom: 80px;
+          }
+
+          .styleguide [class*="brand-logo"]{
+              margin-bottom: 55px;
+          }
+          .styleguide [class="col-1/1"]:last-child [class*="brand-logo"]{
+              margin-bottom: 0px;
+          }
+          .brand-logo
+          {
+              margin: 0 auto;
+              display: block;
+          }
+          .row
+          {
+              margin-left:  -15px;
+              margin-right: -15px;
+          }
+          [class*="col-"]
+          {
+              padding: 10px 15px;
+          }
+          .wrap
+          {
+              max-width: 1040px;
+          }
+      </style>
+
+      <%= yield %>
+      <!-- /page content -->
+  </body>
+</html>

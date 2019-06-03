@@ -1,0 +1,511 @@
+<div class="wrap styleguide">
+
+    <div class="col-1/1"><h1>Brand</h1></div>
+    <div class="col-1/1"><hr></div>
+
+    <div class="row">
+        <div class="col-6/10 col-1/1-@m">
+            <div class='padded-h-large padded-v-large' style="background:#49A3AF;">
+                <div class="row padding-bottom-0px" style="padding:0px;">
+                    <div class="col-1/1">
+                        <a class="brand-logo"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4/10 col-0/0-@m">
+            <pre>&lt;a class="brand-logo"></pre>
+        </div>
+
+        <div class="col-6/10 col-1/1-@m">
+            <div class='padded-h-large padded-v-large' style="background:#F7F7F7;">
+                <div class="row padding-bottom-0px" style="padding:0px;">
+                    <div class="col-1/1">
+                        <a class="brand-logo alt"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4/10 col-0/0-@m">
+            <pre>&lt;div class="brand-logo alt"></pre>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-6/10 col-1/1-@m">
+            <ul class="colors">
+                <li style="background:#51B6C4;" bg-color="Brand Primary">#51B6C4</li>
+                <li style="background:#237C88;" bg-color="Brand Secondary">#237C88</li>
+
+                <li style="background:#51B7C5;" bg-color="Brand Primary Light">#51B7C5</li>
+                <li style="background:#19626C;" bg-color="Brand Secondary Dark">#19626C</li>
+
+                <li style="background:#64C8D6;" bg-color="Brand Primary Lighter">#64C8D6</li>
+                <li style="background:#0E515A;" bg-color="Brand Secondary Darker">#0E515A</li>
+            </ul>
+        </div>
+        <div class="col-4/10 col-0/0-@m">
+            <pre>$brand-primary (#51B6C4)
+            &NewLine;$brand-primary-light (#51B7C5)
+            &NewLine;$brand-primary-lighter (#64C8D6)
+
+            &NewLine;$brand-secondary (#237C88)
+            &NewLine;$brand-secondary-darker (#0E515A)
+            &NewLine;$brand-secondary-dark (#19626C)
+            </pre>
+        </div>
+    </div>
+
+    <div class="col-1/1"><h1>Typography</h1></div>
+    <div class="col-1/1"><hr></div>
+
+    <div class="row">
+        <div class="col-6/10 col-1/1-@m">
+            <div class="col-1/1"><h1>h1 Page Title</h1></div>
+            <div class="col-1/1"><h2>h2 This is a sample large heading</h2></div>
+            <div class="col-1/1"><h3>h3 Interior</h3></div>
+            <div class="col-1/1"><h4>h4 Proposal name/link</h4></div>
+
+            <div class="col-1/1">
+                <p>Paragraph p, 15px, #808080, <u>Lorem ipsum dolor</u> sit amet, <mark>consectetur</mark> adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore <small>small text</small>. Ut enim ad minim veniam,
+                quis nostrud exercitation <a href="#">a link within a paragraph</a> laboris nisi ut aliquip ex ea commodo
+                consequat. <em>Duis aute irure dolor in</em> reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. <strong>Bold Text</strong> sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="col-1/1">
+                <blockquote>
+                    <p>Blockqoute Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer>Someone famous in
+                        <cite title="Source Title">Source Title</cite>
+                    </footer>
+                </blockquote>
+            </div>
+            <div class="col-1/1">
+                <ul>
+                    <li>Default List Unstyled</li>
+                    <li>Second Item</li>
+                    <li>Third Item</li>
+                    <li>Forth Item</li>
+                </ul>
+            </div>
+            <div class="col-1/1">
+                <ul class="list-bullets">
+                    <li>Web browsers also dictate the way that bulleted and numbered lists should look. For example, browsers make it hard to change the style of bullets in unordered</li>
+                    <li>Second Item</li>
+                    <li>Third Item
+                        <ul>
+                            <li>Phasellus iaculis neque</li>
+                            <li>Purus sodales ultricies</li>
+                            <li>Vestibulum laoreet porttitor sem</li>
+                            <li>Ac tristique libero volutpat at</li>
+                        </ul>
+                    </li>
+                    <li>Forth Item</li>
+                </ul>
+            </div>
+            <div class="col-1/1">
+                <ol class="list-numbered">
+                    <li>List Numbered. <a href="#">I am a link in a list</a></li>
+                    <li>Web browsers also dictate the way that bulleted and numbered lists should look. For example, browsers make it hard to change the style of bullets in unordered</li>
+                    <li>Second Item</li>
+                    <li>Third Item</li>
+                    <li>Forth Item</li>
+                </ol>
+            </div>
+            <div class="col-1/1">
+                <ul class="list-inline">
+                    <li>List Inline</li>
+                    <li>Second Item</li>
+                    <li>Third Item</li>
+                    <li>Forth Item</li>
+                </ul>
+            </div>
+            <div class="col-1/1">
+                <ul class="list-inline equal">
+                    <li><a href="#">List Inline Equal</a></li>
+                    <li><a href="#">Second Item</a></li>
+                    <li><a href="#">Third Item</a></li>
+                    <li><a href="#">Forth Item</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-4/10 col-0/0-@m">
+            <pre>&lt;h1>h1 Page Title...
+                &NewLine;&lt;h2>h2 This s a sample large heading...
+                &NewLine;&lt;h3>h3 Interior Title
+                &NewLine;&lt;h4>h4 Proposal name/link
+                &NewLine;&lt;p>Paragraphy helper text
+                &NewLine;&lt;ul>
+                &NewLine;&lt;ul class="list-bullets">
+                &NewLine;&lt;ol class="list-numbered">
+                &NewLine;&lt;ul class="list-inline">
+                &NewLine;&lt;ul class="list-inline equal">
+            </pre>
+        </div>
+    </div>
+
+    <div class="col-1/1"><h1>Buttons</h1></div>
+    <div class="col-1/1"><hr></div>
+
+    <div class="row">
+        <div class="row">
+            <div class="col-6/10 col-1/1-@m">
+                <div class="col-1/1"><a href="#" class="btn btn-default btn-rounded btn-dark">Button Text</a></div>
+            </div>
+
+            <div class="col-4/10 col-0/0-@m">
+                <div class="col-1/1"><pre>&lt;a class="btn btn-dark">Button Text</pre></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6/10 col-1/1-@m">
+                <div class="col-1/1"><a href="#" class="btn btn-default btn-rounded">Button Text</a></div>
+            </div>
+
+            <div class="col-4/10 col-0/0-@m">
+                <div class="col-1/1"><pre>&lt;a class="btn btn-rounded">Button Text</pre></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6/10 col-1/1-@m">
+                <div class="col-1/1"><a href="#" class="btn btn-default btn-rounded btn-hollow">Button Text</a></div>
+            </div>
+
+            <div class="col-4/10 col-0/0-@m">
+                <div class="col-1/1"><pre>&lt;a class="btn btn-hollow">Button Text</pre></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6/10 col-1/1-@m">
+                <div class="col-1/1"><a href="#" class="btn btn-default btn-rounded btn-hollow btn-dotted">Button Text</a></div>
+            </div>
+
+            <div class="col-4/10 col-0/0-@m">
+                <div class="col-1/1"><pre>&lt;a class="btn btn-dotted">Button Text</pre></div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="col-1/1"><h1>Loader</h1></div>
+    <div class="col-1/1"><hr></div>
+
+    <div class="row">
+        <div class="col-6/10">
+            <a class="btn btn-small btn-rounded btn-hollow loading-dark"></a>
+        </div>
+        <div class="col-4/10 col-0/0-@m">
+            <pre>&lt;a class="loading-dark"></pre>
+        </div>
+
+        <div class="col-6/10">
+            <div class="btn btn-small btn-rounded loading"></div>
+        </div>
+        <div class="col-4/10 col-0/0-@m">
+            <pre>&lt;a class="loading"></pre>
+        </div>
+
+        <div class="col-6/10">
+            <div class="loading-dark btn-rounded padded-v"></div>
+        </div>
+        <div class="col-4/10 col-0/0-@m">
+            <pre>&lt;div class="loading padded-v"></pre>
+        </div>
+
+        <div class="col-6/10">
+            <div class="loading bg-primary btn-rounded padded-v" style="background:#51B6C4;"></div>
+        </div>
+        <div class="col-4/10 col-0/0-@m">
+            <pre>&lt;div class="loading-dark padded-v"></pre>
+        </div>
+    </div>
+
+    <div class="col-1/1"><h1>Forms</h1></div>
+    <div class="col-1/1"><hr></div>
+
+    <div class="row">
+       <div class="col-6/10 col-1/1-@m">
+           <div class="col-1/1">
+               <div class="row">
+                   <form>
+                       <div class="col-1/1">
+                           <input type="text" placeholder="Placeholder">
+                       </div>
+                       <div class="col-1/1">
+                           <input type="text" placeholder="Placeholder" class="input-focus">
+                       </div>
+                       <div class="col-1/1">
+                           <input type="text" placeholder="Placeholder" class="input-warning">
+                       </div>
+                       <div class="col-1/1">
+                       <select>
+                            <option>Placeholder 1</option>
+                            <option>Placeholder 2</option>
+                            <option>Placeholder 3</option>
+                       </select>
+                       </div>
+                   </form>
+               </div>
+           </div>
+       </div>
+       <div class="col-4/10 col-1/1-@m">
+           <div class="col-1/1"><pre>&lt;input type="text">&NewLine;&lt;select>&NewLine;&Tab;&lt;option>&lt;/option>&NewLine;&lt;/select></pre></div>
+       </div>
+    </div>
+
+
+    <div class="col-1/1"><h1>Grids</h1></div>
+    <div class="col-1/1"><hr></div>
+
+
+    <div class="row">
+        <div class="row grid">
+            <div class='col-6/12'>col-6/12</div>
+            <div class='col-6/12'>col-6/12</div>
+        </div>
+
+        <div class="row">
+            <pre>&lt;div class="row">&NewLine;&Tab;&lt;div class='col-6/12'></pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="row grid">
+            <div class='col-1/1'>
+                <div class="col-1/1">nested</div>
+                <div class="row">
+                    <div class="col-1/1">nested in row</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <pre>&lt;div class="row">&NewLine;&Tab;&lt;div class="col-1/1">&NewLine;&Tab;&Tab;&lt;div class='row'></pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="grid row equal">
+            <div class='col-'>equal</div>
+            <div class='col-'>equal</div>
+        </div>
+
+        <div class="row">
+            <pre>&lt;div class="row equal">&NewLine;&Tab;&lt;div class='col-'></pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="grid row align-center">
+            <div class='col-1/3'>align-center</div>
+            <div class='col-1/3'>align-center</div>
+        </div>
+
+        <div class="row">
+            <pre>&lt;div class="row align-center">&NewLine;&Tab;&lt;div class='col-1/3'></pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="grid row align-right">
+            <div class='col-1/3'>align-right</div>
+            <div class='col-1/3'>align-right</div>
+        </div>
+
+        <div class="row">
+            <pre>&lt;div class="row align-right">&NewLine;&Tab;&lt;div class='col-1/3'></pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="grid row align-left">
+            <div class='col-1/3'>align-left</div>
+            <div class='col-1/3'>align-left</div>
+        </div>
+
+        <div class="row">
+            <pre>&lt;div class="row align-left">&NewLine;&Tab;&lt;div class='col-1/3'></pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="grid row align-bottom">
+            <div class='col-1/2'>align<br>-<br>bottom</div>
+            <div class='col-1/2'>align-bottom</div>
+        </div>
+
+        <div class="row">
+            <pre>&lt;div class="row align-bottom">&NewLine;&Tab;&lt;div class='col-1/2'></pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="grid row align-middle">
+            <div class='col-1/2'>align<br>-<br>middle</div>
+            <div class='col-1/2'>align-middle</div>
+        </div>
+
+        <div class="row">
+            <pre>&lt;div class="row align-middle">&NewLine;&Tab;&lt;div class='col-1/2'></pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="grid row align-top">
+            <div class='col-1/2'>align<br>-<br>top<br>(default)</div>
+            <div class='col-1/2'>align-top (default)</div>
+        </div>
+
+        <div class="row">
+            <pre>&lt;div class="row align-top">&NewLine;&Tab;&lt;div class='col-1/2'></pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="grid row order-reverse">
+            <div class='col-1/2'>1. order-reverse</div>
+            <div class='col-1/2'>2. order-reverse</div>
+        </div>
+
+        <div class="row">
+            <pre>&lt;div class="row order-reverse">&NewLine;&Tab;&lt;div class='col-1/2'></pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="grid row">
+            <div class='col-1/2 offset-1/2'>offset-1/2</div>
+        </div>
+
+        <div class="row">
+            <pre>&lt;div class="row">&NewLine;&Tab;&lt;div class='col-1/2 offset-1/2'></pre>
+        </div>
+    </div>
+
+    <div class="row grid">
+        <div class="row">
+            <div class='col-1/12 col-1/5-@m col-1/2-@s'>col-1/12</div>
+            <div class='col-1/12 col-1/5-@m col-1/2-@s'>col-1/12</div>
+            <div class='col-1/12 col-1/5-@m col-1/2-@s'>col-1/12</div>
+            <div class='col-1/12 col-1/5-@m col-1/2-@s'>col-1/12</div>
+            <div class='col-1/12 col-1/5-@m col-1/2-@s'>col-1/12</div>
+            <div class='col-1/12 col-1/5-@m col-1/2-@s'>col-1/12</div>
+            <div class='col-1/12 col-1/5-@m col-1/2-@s'>col-1/12</div>
+            <div class='col-1/12 col-1/5-@m col-1/2-@s'>col-1/12</div>
+            <div class='col-1/12 col-1/5-@m col-1/2-@s'>col-1/12</div>
+            <div class='col-1/12 col-1/5-@m col-1/2-@s'>col-1/12</div>
+            <div class='col-1/12 col-1/5-@m col-1/2-@s'>col-1/12</div>
+            <div class='col-1/12 col-1/5-@m col-1/2-@s'>col-1/12</div>
+        </div>
+
+        <div class="row">
+            <div class='col-1/11 col-1/5-@m col-1/2-@s'>col-1/11</div>
+            <div class='col-1/11 col-1/5-@m col-1/2-@s'>col-1/11</div>
+            <div class='col-1/11 col-1/5-@m col-1/2-@s'>col-1/11</div>
+            <div class='col-1/11 col-1/5-@m col-1/2-@s'>col-1/11</div>
+            <div class='col-1/11 col-1/5-@m col-1/2-@s'>col-1/11</div>
+            <div class='col-1/11 col-1/5-@m col-1/2-@s'>col-1/11</div>
+            <div class='col-1/11 col-1/5-@m col-1/2-@s'>col-1/11</div>
+            <div class='col-1/11 col-1/5-@m col-1/2-@s'>col-1/11</div>
+            <div class='col-1/11 col-1/5-@m col-1/2-@s'>col-1/11</div>
+            <div class='col-1/11 col-1/5-@m col-1/2-@s'>col-1/11</div>
+            <div class='col-1/11 col-1/5-@m col-1/1-@s'>col-1/11</div>
+        </div>
+
+        <div class="row">
+            <div class='col-1/10 col-1/5-@m col-1/2-@s'>col-1/10</div>
+            <div class='col-1/10 col-1/5-@m col-1/2-@s'>col-1/10</div>
+            <div class='col-1/10 col-1/5-@m col-1/2-@s'>col-1/10</div>
+            <div class='col-1/10 col-1/5-@m col-1/2-@s'>col-1/10</div>
+            <div class='col-1/10 col-1/5-@m col-1/2-@s'>col-1/10</div>
+            <div class='col-1/10 col-1/5-@m col-1/2-@s'>col-1/10</div>
+            <div class='col-1/10 col-1/5-@m col-1/2-@s'>col-1/10</div>
+            <div class='col-1/10 col-1/5-@m col-1/2-@s'>col-1/10</div>
+            <div class='col-1/10 col-1/5-@m col-1/2-@s'>col-1/10</div>
+            <div class='col-1/10 col-1/5-@m col-1/2-@s'>col-1/10</div>
+        </div>
+
+        <div class="row">
+            <div class='col-1/9 col-1/5-@m col-1/2-@s'>col-1/9</div>
+            <div class='col-1/9 col-1/5-@m col-1/2-@s'>col-1/9</div>
+            <div class='col-1/9 col-1/5-@m col-1/2-@s'>col-1/9</div>
+            <div class='col-1/9 col-1/5-@m col-1/2-@s'>col-1/9</div>
+            <div class='col-1/9 col-1/5-@m col-1/2-@s'>col-1/9</div>
+            <div class='col-1/9 col-1/5-@m col-1/2-@s'>col-1/9</div>
+            <div class='col-1/9 col-1/5-@m col-1/2-@s'>col-1/9</div>
+            <div class='col-1/9 col-1/5-@m col-1/2-@s'>col-1/9</div>
+            <div class='col-1/9 col-1/5-@m col-1/1-@s'>col-1/9</div>
+        </div>
+
+        <div class="row">
+            <div class='col-1/8 col-1/4-@m col-1/2-@s'>col-1/8</div>
+            <div class='col-1/8 col-1/4-@m col-1/2-@s'>col-1/8</div>
+            <div class='col-1/8 col-1/4-@m col-1/2-@s'>col-1/8</div>
+            <div class='col-1/8 col-1/4-@m col-1/2-@s'>col-1/8</div>
+            <div class='col-1/8 col-1/4-@m col-1/2-@s'>col-1/8</div>
+            <div class='col-1/8 col-1/4-@m col-1/2-@s'>col-1/8</div>
+            <div class='col-1/8 col-1/4-@m col-1/2-@s'>col-1/8</div>
+            <div class='col-1/8 col-1/4-@m col-1/2-@s'>col-1/8</div>
+        </div>
+
+        <div class="row">
+            <div class='col-1/7 col-1/7-@m col-1/1-@s'>col-1/7</div>
+            <div class='col-1/7 col-1/7-@m col-1/1-@s'>col-1/7</div>
+            <div class='col-1/7 col-1/7-@m col-1/1-@s'>col-1/7</div>
+            <div class='col-1/7 col-1/7-@m col-1/1-@s'>col-1/7</div>
+            <div class='col-1/7 col-1/7-@m col-1/1-@s'>col-1/7</div>
+            <div class='col-1/7 col-1/7-@m col-1/1-@s'>col-1/7</div>
+            <div class='col-1/7 col-1/7-@m col-1/1-@s'>col-1/7</div>
+        </div>
+
+        <div class="row">
+            <div class='col-1/6 col-1/3-@m col-1/3-@s'>col-1/6</div>
+            <div class='col-1/6 col-1/3-@m col-1/3-@s'>col-1/6</div>
+            <div class='col-1/6 col-1/3-@m col-1/3-@s'>col-1/6</div>
+            <div class='col-1/6 col-1/3-@m col-1/3-@s'>col-1/6</div>
+            <div class='col-1/6 col-1/3-@m col-1/3-@s'>col-1/6</div>
+            <div class='col-1/6 col-1/3-@m col-1/3-@s'>col-1/6</div>
+        </div>
+
+        <div class="row">
+            <div class='col-1/5 col-1/5-@m col-1/1-@s'>col-1/5</div>
+            <div class='col-1/5 col-1/5-@m col-1/1-@s'>col-1/5</div>
+            <div class='col-1/5 col-1/5-@m col-1/1-@s'>col-1/5</div>
+            <div class='col-1/5 col-1/5-@m col-1/1-@s'>col-1/5</div>
+            <div class='col-1/5 col-1/5-@m col-1/1-@s'>col-1/5</div>
+        </div>
+
+        <div class="row">
+            <div class='col-1/4 col-1/2-@m col-1/2-@s'>col-1/4</div>
+            <div class='col-1/4 col-1/2-@m col-1/2-@s'>col-1/4</div>
+            <div class='col-1/4 col-1/2-@m col-1/2-@s'>col-1/4</div>
+            <div class='col-1/4 col-1/2-@m col-1/2-@s'>col-1/4</div>
+        </div>
+
+        <div class="row">
+            <div class='col-1/3 col-1/3-@m col-1/3-@s'>col-1/3</div>
+            <div class='col-1/3 col-1/3-@m col-1/3-@s'>col-1/3</div>
+            <div class='col-1/3 col-1/3-@m col-1/3-@s'>col-1/3</div>
+        </div>
+
+        <div class="row">
+            <div class='col-1/2 col-1/2-@m col-1/1-@s'>col-1/2</div>
+            <div class='col-1/2 col-1/2-@m col-1/1-@s'>col-1/2</div>
+        </div>
+
+        <div class="row">
+            <div class='col-1/1 col-1/1-@m col-1/1-@s'>col-1/1</div>
+        </div>
+    </div>
+
+</div>
+

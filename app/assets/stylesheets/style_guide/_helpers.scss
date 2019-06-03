@@ -1,0 +1,271 @@
+/**
+ *
+ * Helpers - Lists, Text, Background(Colors, Hero, Parallax)
+ =================================================
+ *
+ */
+
+
+/**
+ * Lists
+ */
+@mixin helpers-list($prefix)
+{
+    .list-block#{$prefix}
+    {
+        li
+        {
+            display: block;
+        }
+    }
+
+    .list-inline#{$prefix}
+    {
+        &.equal
+        {
+            list-style: none;
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+
+            li
+            {
+                display: table-cell;
+                float: none;
+                width: auto;
+            }
+        }
+
+        li
+        {
+            display: inline-block;
+        }
+    }
+
+    .list-bullets#{$prefix}
+    {
+        counter-reset: list-bullets-counter;
+
+        li
+        {
+            &:before
+            {
+                content: counter(list-bullets-counter, disc);
+                counter-increment: list-bullets-counter;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .list-numbered#{$prefix}
+    {
+        counter-reset: list-numbered-counter;
+
+        li
+        {
+            &:before
+            {
+                content: counter(list-numbered-counter, decimal) '.';
+                counter-increment: list-numbered-counter;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .list-bullets#{$prefix},
+    .list-numbered#{$prefix}
+    {
+        margin-left:  0;
+        padding-left: 1em;
+        text-indent:  -1em;
+
+        ul li,
+        {
+            &:before
+            {
+                content: '∘';
+                font-size: 30px + 2px;
+                margin-right: 10px;
+                position: relative;
+                top: 1px;
+            }
+        }
+
+        ul,
+        ol
+        {
+            padding-left: 30px;
+        }
+    }
+}
+
+
+/**
+ * Text Align
+ */
+@mixin helpers-text-align($prefix)
+{
+    .text-left#{$prefix},
+    .text-left-\*#{$prefix} *,
+    .text-left-\>#{$prefix} > *
+    {
+        text-align:     left;
+    }
+
+    .text-right#{$prefix},
+    .text-right-\*#{$prefix} *,
+    .text-right-\>#{$prefix} > *
+    {
+        text-align:     right;
+    }
+
+    .text-center#{$prefix},
+    .text-center-\*#{$prefix} *,
+    .text-center-\>#{$prefix} > *
+    {
+        text-align:     center;
+    }
+
+    .text-justify#{$prefix},
+    .text-justify-\*#{$prefix} *,
+    .text-justify-\>#{$prefix} > *
+    {
+        text-align:     justify;
+    }
+
+    .text-nowrap#{$prefix},
+    .text-nowrap-\*#{$prefix} *,
+    .text-nowrap-\>#{$prefix} > *
+    {
+        white-space:    nowrap;
+    }
+
+    .text-pre#{$prefix},
+    .text-pre-\*#{$prefix} *,
+    .text-pre-\>#{$prefix} > *
+    {
+        white-space:    pre;
+    }
+}
+
+
+/**
+ * Text Case
+ */
+@mixin helpers-text-case($prefix)
+{
+    .text-lowercase#{$prefix}
+    {
+        text-transform: lowercase;
+    }
+
+    .text-uppercase#{$prefix}
+    {
+        text-transform: uppercase;
+    }
+
+    .text-capitalize#{$prefix}
+    {
+        text-transform: capitalize;
+    }
+}
+
+
+/**
+ * Text Helpers
+ */
+@mixin helpers-text-helpers($prefix)
+{
+    .text-hidden#{$prefix}
+    {
+        text-indent: -9999px
+    }
+}
+
+
+@mixin animation($name)
+{
+    @-webkit-keyframes #{$name}
+    {
+        @content;
+    }
+    @-moz-keyframes #{$name}
+    {
+        @content;
+    }
+    @-ms-keyframes #{$name}
+    {
+        @content;
+    }
+    @keyframes #{$name}
+    {
+        @content;
+    }
+}
+
+
+@mixin prefix($name, $argument)
+{
+    -webkit-#{$name}: #{$argument};
+    -ms-#{$name}: #{$argument};
+    -moz-#{$name}: #{$argument};
+    -o-#{$name}: #{$argument};
+    #{$name}: #{$argument};
+}
+
+
+@mixin clearfix
+{
+    &:before,
+    &:after
+    {
+        content:    " " ;
+        display:    table;
+    }
+    &:after
+    {
+        clear:      both;
+    }
+}
+
+
+/*
+ * Helper Breakpoints
+ */
+@mixin helpers-breakpoints($media-label)
+{
+    @include helpers-list($media-label);
+    @include helpers-text-align($media-label);
+    @include helpers-text-case($media-label);
+    @include helpers-text-helpers($media-label);
+}
+
+
+/**
+ *
+ * All Breakpoints Pieced Together
+ =================================================
+ *
+ */
+
+
+@each $media-label, $media-size in ('': null, "m": $device-size-medium, "s": $device-size-small)
+{
+    @if $media-label == ''
+    {
+        @include grid-breakpoints($media-label);
+        @include layout-breakpoints($media-label);
+        @include helpers-breakpoints($media-label);
+    }
+    @else
+    {
+        $media-label: unquote(-\@)#{$media-label};
+
+        @media (max-width: $media-size)
+        {
+            @include grid-breakpoints($media-label);
+            @include layout-breakpoints($media-label);
+            @include helpers-breakpoints($media-label);
+        }
+    }
+}

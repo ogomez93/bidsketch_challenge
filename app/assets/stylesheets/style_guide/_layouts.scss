@@ -1,0 +1,518 @@
+/**
+ *
+ * Grids.
+=================================================
+ *
+ */
+
+
+$grid-wrap-width:    1000px;
+$grid-no-of-columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+
+$device-size-medium: 992px;
+$device-size-small:  768px;
+$gutter:             15px;
+
+
+/**
+ * Mixin: Row Alignmnet - Center, Left, Right, Pulls, Equal
+
+ * Usage:
+
+ * .pull-left                               (floats left)
+ * .pull-right                              (floats right)
+ * .pull-none                               (removes floats)
+ * .center-block                            (makes the element and centered block element)
+ * .center-block-children                   (makes all the decendents elements centered block elements)
+ * .align-left, align-right, align-center,  (aligns center/left/right grid colums)
+ * .align-middle, align-bottom, align-top   (aligns top/bottom/middle grid colums)
+ * .order-reverse                           (reverse columns order)
+ * .order-default                           (reset columns order to default)
+ * .equal
+ */
+@mixin grid-alignment($prefix)
+{
+    .row.equal#{$prefix}
+    {
+        display:      table;
+        table-layout: fixed;
+        width:        100%;
+
+        &:before,
+        &:after
+        {
+            display: none;
+        }
+
+        &.equal#{$prefix} [class*="col-"]
+        {
+            display: table-cell;
+            float: none;
+            width: auto;
+        }
+    }
+
+    .center-block#{$prefix},
+    .center-block-\*#{$prefix} *,
+    .center-block-\>#{$prefix} > *
+    {
+        display:      block         !important;
+        margin-left:  auto          !important;
+        margin-right: auto          !important;
+        float:        none          !important;
+        position:     relative      !important;
+    }
+
+    .center-inline#{$prefix},
+    .center-inline-\*#{$prefix} *,
+    .center-inline-\>#{$prefix} > *
+    {
+        display:      inline-block  !important;
+        margin-left:  auto          !important;
+        margin-right: auto          !important;
+        float:        none          !important;
+        position:     relative      !important;
+    }
+
+    .pull-left#{$prefix},
+    .pull-left-\*#{$prefix} *,
+    .pull-left-\>#{$prefix} > *
+    {
+        float:            left  !important;
+    }
+    .pull-right#{$prefix},
+    .pull-right-\*#{$prefix} *,
+    .pull-right-\>#{$prefix} > *
+    {
+        float:            right !important;
+    }
+    html .pull-none#{$prefix},
+    html .pull-none-\*#{$prefix} *,
+    html .pull-none-\>#{$prefix} > *
+    {
+        float:            none !important;
+    }
+
+    .row.align-center#{$prefix} [class*='col-'],
+    .row.align-right#{$prefix}  [class*='col-'],
+    .row.align-reft#{$prefix}   [class*='col-'],
+    .row.align-bottom#{$prefix} [class*='col-'],
+    .row.align-top#{$prefix}    [class*='col-'],
+    .row.align-middle#{$prefix} [class*='col-']
+    {
+        float: none;
+        display: inline-block;
+        vertical-align: top;
+        position:relative;
+        margin-left:  -2.22px;
+        margin-right: -2.22px;
+        text-align: left;
+    }
+
+    .row.align-center#{$prefix},
+    .row.align-right#{$prefix},
+    .row.align-left#{$prefix},
+    .row.align-bottom#{$prefix},
+    .row.align-top#{$prefix},
+    .row.align-middle#{$prefix}
+    {
+        padding-left:  5px;
+        padding-right: 5px;
+    }
+
+    .row.align-center#{$prefix}
+    {
+        text-align:     center;
+    }
+    .row.align-right#{$prefix}
+    {
+        text-align:     right;
+    }
+    .row.align-left#{$prefix}
+    {
+        text-align:     left;
+    }
+    .row.align-bottom#{$prefix}  [class*='col-']
+    {
+        vertical-align: bottom;
+    }
+    .row.align-top#{$prefix}     [class*='col-']
+    {
+        vertical-align: top;
+    }
+    .row.align-middle#{$prefix}  [class*='col-']
+    {
+        vertical-align: middle;
+    }
+    .row.order-reverse#{$prefix}
+    {
+        text-align:     left;
+        direction:      rtl;
+    }
+    .row.order-reverse#{$prefix} [class*='col-']
+    {
+        float: none;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        margin-left:  -2.22px;
+        margin-right: -2.22px;
+    }
+
+    .row.order-default#{$prefix}
+    {
+        direction:      ltr;
+    }
+
+    .row.order-default#{$prefix} [class*='col-']
+    {
+        text-align: inherit;
+        float: left;
+        display: block;
+        vertical-align: initial;
+        position: static;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+
+/*
+ * Mixin: Hide/Show Elements
+
+ * Usage:
+
+ * .hidden or .col-0/0 or .col-0/12
+ * supports all fractions between 0 and 12 i.e col-0/6
+ * supports medium(tables), small(phones)
+ * i.e .hidden-s or .col-s-0/0 (hidden on small devices)
+ */
+@mixin grid-visibility($prefix)
+{
+    .hidden#{$prefix},
+    .hidden-\*#{$prefix} *,
+    .hidden-\>#{$prefix} > *,
+    .col-0\/0#{$prefix},
+    .col-0\/1#{$prefix},
+    .col-0\/2#{$prefix},
+    .col-0\/3#{$prefix},
+    .col-0\/4#{$prefix},
+    .col-0\/5#{$prefix},
+    .col-0\/6#{$prefix},
+    .col-0\/7#{$prefix},
+    .col-0\/8#{$prefix},
+    .col-0\/9#{$prefix},
+    .col-0\/10#{$prefix},
+    .col-0\/11#{$prefix},
+    .col-0\/12#{$prefix}
+    {
+        display:    none    !important;
+    }
+
+    html .show#{$prefix},
+    html .show-\*#{$prefix} *,
+    html .show-\>#{$prefix} > *
+    {
+        display:    block   !important;
+    }
+
+    .invisible#{$prefix},
+    .invisible-\*#{$prefix} *,
+    .invisible-\>#{$prefix} > *
+    {
+        visibility: hidden;
+    }
+}
+
+
+/*
+ * Mixin: Offsets
+
+ * Usage:
+
+ * .offset-1/12
+ * supports all fractions between 0 and 12 i.e offset-1/4
+ * supports medium(tables), small(phones)
+ * i.e .offset-s-1/2 (offsets by 1/2 on small devices)
+ */
+@mixin grid-offsets($prefix)
+{
+    @each $grid in $grid-no-of-columns
+    {
+        @for $i from 1 through $grid
+        {
+            .offset-#{$i}\/#{$grid}#{$prefix}
+            {
+                margin-left: $i/$grid * 100%;
+            }
+        }
+    }
+}
+
+
+/**
+ * Mixin: Columns - Default
+
+ * Usage:
+
+ * .col-1/2 or .col-1/12
+ * supports all fractions between 0 and 12 i.e col-2/5
+ * supports medium(tables), small(phones)
+ * i.e .col-s-1/1 or .col-m-1/2 (1/1 or 1/2 on small devices)
+ */
+@mixin grid-columns($prefix)
+{
+    @each $grid in $grid-no-of-columns
+    {
+        @for $i from 1 through $grid
+        {
+            .col-#{$i}\/#{$grid}#{$prefix}
+            {
+                width:      $i/$grid * 100%;
+            }
+        }
+    }
+}
+
+
+/*
+ * Grid Breakpoints
+ */
+@mixin grid-breakpoints($media-label)
+{
+    @include grid-alignment($media-label);
+    @include grid-visibility($media-label);
+    @include grid-offsets($media-label);
+    @include grid-columns($media-label);
+}
+
+
+*,
+:after,
+:before
+{
+    -webkit-box-sizing:     border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+html,
+body
+{
+    height: 100%;
+}
+
+
+
+.clearfix,
+.cf
+{
+    &:before,
+    &:after
+    {
+        content:    " ";
+        display:    table;
+    }
+    &:after
+    {
+        clear:      both;
+    }
+}
+
+.clear
+{
+    clear: both;
+}
+
+.wrap
+{
+    display:        block;
+    width:          100%;
+    max-width:      $grid-wrap-width;
+    margin-right:   auto;
+    margin-left:    auto;
+    padding-left:   10px;
+    padding-right:  10px;
+}
+
+
+/**
+ * Rows
+
+ * Usage:
+
+ * <div class="row">
+ *     <div class="col-1/2"></div>
+ * </div>
+ */
+.row
+{
+    display: block;
+
+    &:before,
+    &:after
+    {
+        content:    " " ;
+        display:    table;
+    }
+    &:after
+    {
+        clear:      both;
+    }
+}
+
+.bordered {
+  border: 1px solid $gray-color-lightest;
+  border-radius: 4px;
+}
+
+/**
+ * Columns - All
+ */
+[class*="col-"]
+{
+    display:        block;
+    float:          left;
+    text-align:     inherit;
+
+    .row
+    {
+        width:        auto;
+    }
+
+    > img
+    {
+        width:      100%;
+        height:     auto;
+    }
+}
+
+
+/**
+ *
+ * Layouts.
+=================================================
+ *
+ */
+
+
+$layout-values: ('-none': 0px, '-smaller': 10px, '-small': 15px, '': 30px, '-large': 60px, '-larger': 120px, '-extra-large': 220px, '-wildcard': 50px );
+$layout-spacing-types: ('.padded': 'padding');
+
+
+/**
+ * Paddings
+ */
+@mixin layouts-padding($prefix)
+{
+	@each $spacing-type, $spacing-value in $layout-spacing-types
+	{
+		@each $type, $value in $layout-values
+	    {
+			#{$spacing-type}#{$type}#{$prefix},
+			#{$spacing-type}#{$type}-\*#{$prefix} *,
+			#{$spacing-type}#{$type}-\>#{$prefix} > *
+			{
+				#{$spacing-value}: $value !important;
+			}
+
+
+			#{$spacing-type}-v#{$type}#{$prefix},
+			#{$spacing-type}-v#{$type}-\*#{$prefix} *,
+			#{$spacing-type}-v#{$type}-\>#{$prefix} > *
+			{
+				#{$spacing-value}-top: $value !important;
+				#{$spacing-value}-bottom: $value !important;
+			}
+			#{$spacing-type}-h#{$type}#{$prefix},
+			#{$spacing-type}-h#{$type}-\*#{$prefix} *,
+			#{$spacing-type}-h#{$type}-\>#{$prefix} > *
+			{
+				#{$spacing-value}-left: $value !important;
+				#{$spacing-value}-right: $value !important;
+			}
+
+
+			#{$spacing-type}-top#{$type}#{$prefix},
+			#{$spacing-type}-top#{$type}-\*#{$prefix} *,
+			#{$spacing-type}-top#{$type}-\>#{$prefix} > *
+			{
+				#{$spacing-value}-top: $value !important;
+			}
+			#{$spacing-type}-bottom#{$type}#{$prefix},
+			#{$spacing-type}-bottom#{$type}-\*#{$prefix} *,
+			#{$spacing-type}-bottom#{$type}-\>#{$prefix} > *
+			{
+				#{$spacing-value}-bottom: $value !important;
+			}
+
+
+			#{$spacing-type}-right#{$type}#{$prefix},
+			#{$spacing-type}-right#{$type}-\*#{$prefix} *,
+			#{$spacing-type}-right#{$type}-\>#{$prefix} > *
+			{
+				#{$spacing-value}-right: $value !important;
+			}
+			#{$spacing-type}-left#{$type}#{$prefix},
+			#{$spacing-type}-left#{$type}-\*#{$prefix} *,
+			#{$spacing-type}-left#{$type}-\>#{$prefix} > *
+			{
+				#{$spacing-value}-left: $value !important;
+			}
+	    }
+	}
+}
+
+
+/**
+ * Width
+ */
+@mixin layouts-width($prefix)
+{
+    @each $label, $width in ('quarter': 25%, 'half': 50%, 'full': 100%)
+    {
+        .width-#{$label}#{$prefix},
+        .width-#{$label}-\*#{$prefix} *,
+        .width-#{$label}-\>#{$prefix} > *
+        {
+            width:       #{$width} !important;
+        }
+    }
+}
+
+
+/**
+ * Helpers
+ */
+@mixin breakpoint-medium
+{
+    @media (max-width: $device-size-medium)
+    {
+        @content;
+    }
+}
+@mixin breakpoint-small
+{
+    @media (max-width: $device-size-small)
+    {
+        @content;
+    }
+}
+@mixin breakpoint-retina
+{
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+    {
+        @content;
+    }
+}
+
+
+/*
+ * Layout Breakpoints
+ */
+@mixin layout-breakpoints($media-label)
+{
+	@include layouts-padding($media-label);
+	@include layouts-width($media-label);
+}
