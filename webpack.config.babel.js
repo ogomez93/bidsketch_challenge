@@ -7,16 +7,20 @@ import productionConfig from './config/environments/production'
 
 const commonConfig = {
   resolve: {
-    extensions: ['.js', '.css', '.scss'],
-    modules: ['web_modules', 'node_modules', 'app/assets/shared', 'app/assets/apps']
+    modules: ['node_modules', 'app/assets/apps/', 'app/assets/shared', 'app/assets/'],
+    extensions: ['.js', '.css', '.scss']
   },
   context: path.resolve('app/assets'),
   entry: {
-    'styles': './stylesheets/application.scss'
+    styles: './stylesheets/application.scss',
+    example: ['babel-polyfill', './apps/example/index.js']
   },
   output: {
     path: path.resolve('tmp/assets'),
     filename: '[name].js'
+  },
+  performance: {
+    hints: false
   },
   module: {
     rules: [
@@ -27,11 +31,18 @@ const commonConfig = {
       },
       {
         test: /\.s?[ac]ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [ 'style-loader', 'css-loader', 'sass-loader' ]
       },
       {
-        test: /\.svg/,
-        use: 'svg-url-loader'
+        test: /\.(png|jpe?g|svg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: `images/[name]${process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging' ? '-[hash]' : ''}.[ext]`
+            }
+          }
+        ]
       }
     ]
   }
