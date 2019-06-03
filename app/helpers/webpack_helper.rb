@@ -8,12 +8,22 @@ module WebpackHelper
     end
   end
 
-  def webpack_common_tag
-    concat webpack_style_tag
+  def webpack_image_tag(path, args)
+    image_tag asset_file('images/' + path), **args
   end
 
-  def webpack_style_tag
-    webpack_asset_tag Rails.env.development? ? 'styles.js' : 'styles.css'
+  def webpack_favicon_tag(path, args)
+    favicon_link_tag asset_file('images/' + path), **args
+  end
+
+  def webpack_common_tag
+    capture do
+      concat webpack_style_tag
+    end
+  end
+
+  def webpack_style_tag(name = :styles)
+    webpack_asset_tag Rails.env.development? ? "#{name.to_s}.js" : "#{name.to_s}.css"
   end
 
   def webpack_bundle_tag(name)
@@ -23,15 +33,12 @@ module WebpackHelper
 
   def asset_file(name)
     case Rails.env
-    when 'production', 'staging'
-      lookup_asset_in_manifest(name)
+    when 'test'
+      return name
     else
-      "http://localhost:8080/#{name}"
+      manifest = File.open(Rails.root + "public/assets/manifest.json")
     end
-  end
 
-  def lookup_asset_in_manifest(asset)
-    JSON.parse(File.read(Rails.root + "public/assets/manifest.json"))[asset]
+    JSON.parse(manifest.read)[name]
   end
 end
-

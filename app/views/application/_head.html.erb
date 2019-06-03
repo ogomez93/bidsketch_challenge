@@ -1,0 +1,13 @@
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="">
+<meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive|Dancing+Script|Satisfy|Shadows+Into+Light+Two" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/xoz0rpv.css">
+<% if content_for? :styles %>
+  <%= yield :styles %>
+<% else %>
+  <%= webpack_common_tag %>
+<% end %>
+
+<%= yield :head %>

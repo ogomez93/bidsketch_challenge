@@ -31,12 +31,14 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  # Set the host for email links
+  config.action_mailer.default_url_options = { host: secrets.host }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
-
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
@@ -44,4 +46,11 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  config.relative_url_root = "/"
+
+  config.action_mailer.default_url_options[:script_name] = '/'
+
+  config.active_job.queue_adapter = :async
+  # config.active_job.queue_adapter = :sidekiq
 end
