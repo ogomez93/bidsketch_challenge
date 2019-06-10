@@ -20,3 +20,8 @@
 
 # Ignore asset output
 /public/assets/*
+
+# Ignore VSCode settings
+/.vscode
+
+.DS_Store
