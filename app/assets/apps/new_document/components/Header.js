@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { actions, selectors } from 'resources/document';
 
+import ProgressBar from './ProgressBar';
+
 export class Header extends React.Component {
   startFillingDocument = () => this.props.startFillingDocument();
 
@@ -20,13 +22,16 @@ export class Header extends React.Component {
     const { documentIsReady, startedFillingDocument } = this.props;
 
     return (
-      <div className='wrap'>
-        <div className='row'>
-          Review & Complete document
-          { !startedFillingDocument && this.startButton() }
-          { documentIsReady && this.submitButton() }
+      <header>
+        <div className='wrap'>
+          <div className='row'>
+            Review & Complete document
+            { !startedFillingDocument && this.startButton() }
+            { documentIsReady && this.submitButton() }
+          </div>
         </div>
-      </div>
+        <ProgressBar />
+      </header>
     );
   }
 }

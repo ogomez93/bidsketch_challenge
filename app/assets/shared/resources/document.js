@@ -187,9 +187,11 @@ const getAllCheckboxes = createSelector(
     return checkboxes;
   }
 );
+const getAllCheckboxesCount = (state) => getAllCheckboxes(state).length;
 const getCheckedBoxes = createSelector(
   getAllCheckboxes, boxes => boxes.filter(box => box.checked)
 );
+const getCheckedBoxesCount = (state) => getCheckedBoxes(state).length;
 const getAllBoxesAreChecked = createSelector(
   getAllCheckboxes, getCheckedBoxes, (all, checked) => all.length === checked.length
 );
@@ -233,7 +235,9 @@ export const selectors = {
   getPageBoxesCount,
   getPageCheckedBoxesCount,
   getAllCheckboxes,
+  getAllCheckboxesCount,
   getCheckedBoxes,
+  getCheckedBoxesCount,
   getAllBoxesAreChecked,
   getFormattedDocument
 };
