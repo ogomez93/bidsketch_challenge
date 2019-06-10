@@ -1,24 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { actions, selectors } from 'resources/document';
+import Header from './Header';
+import Content from './Content';
 
 export class Document extends React.Component {
   render () {
+    const { documentHasBeenSubmitted } = this.props;
+
+    if (documentHasBeenSubmitted) {
+      return (
+        <div className="container">Your document was successfully submitted!</div>
+      )
+    }
+
     return (
       <div className="container">
-        Hello world
+        <Header />
+        <Content />
       </div>
     );
   }
 }
 
 const mapState = state => ({
-
+  documentHasBeenSubmitted: state.document.documentHasBeenSubmitted
 });
 
-const mapDispatch = dispatch => ({
-  
-});
-
-export default connect(mapState, mapDispatch)(Document);
+export default connect(mapState)(Document);
