@@ -3,18 +3,33 @@ import { connect } from 'react-redux';
 
 import { actions, selectors } from 'resources/document';
 
+import CheckItem from 'images/docsketch/icon-check-complete.svg';
+
 export class SidebarPage extends React.Component {
   selectPage = () => this.props.selectPage(this.props.page.pageNumber);
 
+  pageContent = () => {
+    const { boxesCount, checkedBoxesCount } = this.props;
+    if (!boxesCount) return;
+    if (checkedBoxesCount < boxesCount) {
+      return (
+        <div className="incomplete-page">
+          {checkedBoxesCount} of {boxesCount}
+        </div>
+      )
+    }
+    return <img src={CheckItem} alt="" className="complete-page"/>
+  }
+
   render () {
-    const { boxesCount, checkedBoxesCount, page } = this.props;
-    const boxesCountText = boxesCount ? `${checkedBoxesCount} of ${boxesCount}` : '';
-    const className = this.props.currentPageNumber === this.props.page.pageNumber ? 'active' : '';
+    const activeIfIsCurrent = this.props.currentPageNumber === this.props.page.pageNumber ? 'active' : '';
 
     return (
-      <li onClick={this.selectPage} className={className}>
-        Page number {page.pageNumber}. { boxesCountText }
-      </li>
+      <div onClick={this.selectPage} className={`sidebar-page ${activeIfIsCurrent}`}>
+        <div className="sidebar-page-content">
+          { this.pageContent() }
+        </div>
+      </div>
     );
   }
 }

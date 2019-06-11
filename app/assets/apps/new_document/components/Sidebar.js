@@ -6,9 +6,11 @@ import { selectors } from 'resources/document';
 import SidebarPage from './SidebarPage';
 
 const Sidebar = ({ pages }) => (
-  <ul>
+  <div className="sidebar-container">
     { pages.map(page => <SidebarPage key={`page-${page.pageNumber}`} page={page} />) }
-  </ul>
+
+    <div className="vertical-separator" />
+  </div>
 );
 
 const mapState = state => ({
