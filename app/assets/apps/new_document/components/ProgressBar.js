@@ -4,10 +4,8 @@ import { connect } from 'react-redux';
 import { selectors } from 'resources/document';
 
 const ProgressBar = ({ allBoxes, checkedBoxes }) => (
-  <div className="row">
-    <div className={`col-${checkedBoxes}/${allBoxes}`}>
-      {checkedBoxes} / {allBoxes}
-    </div>
+  <div className="row progress-bar">
+    <div className={`col-${checkedBoxes}/${allBoxes} progress`} />
   </div>
 );
 

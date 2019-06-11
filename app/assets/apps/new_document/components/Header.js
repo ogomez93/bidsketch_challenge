@@ -11,24 +11,28 @@ export class Header extends React.Component {
   submitDocument = () => this.props.submitDocument();
 
   startButton = () => (
-    <button onClick={this.startFillingDocument}>Click to Start</button>
+    <button onClick={this.startFillingDocument} className="btn btn-rounded padded-h-wildcard start-button">
+      Click to START
+    </button>
   );
 
   submitButton = () => (
-    <button onClick={this.submitDocument}>Save & finish document</button>
+    <button onClick={this.submitDocument} className="btn btn-rounded padded-h-wildcard submit-button">
+      Save & finish document
+    </button>
   );
 
   render () {
     const { documentIsReady, startedFillingDocument } = this.props;
 
     return (
-      <header>
-        <div className='wrap'>
-          <div className='row'>
+      <header className="header">
+        <div className="row header-content">
+          <span>
             Review & Complete document
-            { !startedFillingDocument && this.startButton() }
-            { documentIsReady && this.submitButton() }
-          </div>
+          </span>
+          { !startedFillingDocument && this.startButton() }
+          { documentIsReady && this.submitButton() }
         </div>
         <ProgressBar />
       </header>

@@ -6,7 +6,7 @@ import App from './components';
 import appStore from './store';
 
 const render = Component => {
-  document.body.className = 'example';
+  document.body.className = 'bg-light-grey';
   ReactDOM.render(
     <Provider store={appStore}>
       <Component />
