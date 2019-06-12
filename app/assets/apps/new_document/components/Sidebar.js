@@ -6,7 +6,7 @@ import { selectors } from 'resources/document';
 import SidebarPage from './SidebarPage';
 
 const Sidebar = ({ pages }) => (
-  <div className="sidebar-container">
+  <div className="sidebar">
     { pages.map(page => <SidebarPage key={`page-${page.pageNumber}`} page={page} />) }
 
     <div className="vertical-separator" />

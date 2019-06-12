@@ -162,6 +162,7 @@ export const actions = {
 // Selectors
 const getState = state => state;
 const getDocument = ({ document }) => document;
+const getStartedFillingDocument = state => getDocument(state).startedFillingDocument;
 const getCurrentCheckboxId = state => getDocument(state).currentCheckboxNumber;
 const getCurrentPageId = state => getDocument(state).currentPageNumber;
 const getAllPages = state => getDocument(state).pages;
@@ -222,6 +223,7 @@ const getFormattedDocument = createSelector(
 
 export const selectors = {
   getDocument,
+  getStartedFillingDocument,
   getCurrentCheckboxId,
   getCurrentPageId,
   getAllPages,

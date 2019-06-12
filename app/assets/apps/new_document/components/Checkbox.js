@@ -12,23 +12,42 @@ export class DocumentPage extends React.Component {
     });
   }
 
+  isCurrent = () => {
+    const { box, currentCheckboxNumber, documentIsReady, startedFillingDocument } = this.props;
+    return startedFillingDocument && !documentIsReady && box.checkboxNumber === currentCheckboxNumber;
+  }
+
+  getClassName = () => this.isCurrent() ? 'current' : '';
+
+  renderBubble = () => this.isCurrent() && (
+    <div className="current-checkbox-bubble" onClick={this.toggleCheckBox}>
+      Click to CHECK
+      <div className="current-checkbox-bubble-triangle" />
+    </div>
+  );
+
   render () {
-    const { box, currentCheckboxNumber } = this.props;
+    const { box } = this.props;
 
     return (
-      <input
-        key={`box-${box.pageNumber}-${box.checkboxNumber}`}
-        type="checkbox"
-        className={box.checkboxNumber === currentCheckboxNumber ? 'active' : ''}
-        onChange={this.toggleCheckBox}
-        checked={box.checked}
-      />
+      <div className="checkbox-container">
+        {this.renderBubble()}
+        <input
+          key={`box-${box.pageNumber}-${box.checkboxNumber}`}
+          type="checkbox"
+          className={this.getClassName()}
+          onChange={this.toggleCheckBox}
+          checked={box.checked}
+        />
+      </div>
     );
   }
 }
 
 const mapState = state => ({
-  currentCheckboxNumber: selectors.getCurrentCheckboxId(state)
+  currentCheckboxNumber: selectors.getCurrentCheckboxId(state),
+  startedFillingDocument: selectors.getStartedFillingDocument(state),
+  documentIsReady: selectors.getAllBoxesAreChecked(state)
 });
 
 const mapDispatch = dispatch => ({

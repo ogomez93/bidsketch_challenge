@@ -1,9 +1,35 @@
 .progress-bar {
-  height: 4px;
-  background-color: $gray-color-lightest;
-
+  height: 6px;
+  background-color: lighten($brand-color-primary, 30%);
+  
   .progress {
     height: 100%;
     background-color: $brand-color-primary;
+    position: relative;
+
+    .progress-bar-text {
+      position: absolute;
+      right: 0;
+      top: 4px;
+      color: $brand-color-primary;
+      font-size: 12px;
+      z-index: 10;
+
+      &.full {
+        right: 20px;
+      }
+    }
+    
+    .progress-bar-triangle {
+      position: absolute;
+      right: -10px;
+      top: -8px;
+      border-top: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid $brand-color-primary;
+      border-left: 10px solid transparent;
+      z-index: 10;
+      transform: rotateZ(45deg) rotateX(22deg) rotateY(-50deg);
+    }
   }
 }

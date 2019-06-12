@@ -6,9 +6,8 @@ import { selectors } from 'resources/document';
 import Checkbox from './Checkbox';
 
 const DocumentPage = ({ boxes, page }) => (
-  <div className="page-container">
-    <div className="page">
-      Page number: {page.pageNumber}
+  <div className="document-page-container">
+    <div className="document-page">
       {boxes.map(box =>
         <Checkbox box={box} key={`box-${box.checkboxNumber}-page-${box.pageNumber}`} />
       )}

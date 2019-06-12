@@ -1,10 +1,11 @@
-.sidebar-container {
+.sidebar {
   height: 100%;
   position: relative;
   overflow: overlay;
-  padding: 22px 40px;
+  padding: 22px 0;
   width: 220px;
   flex-grow: 0;
+  flex-shrink: 0;
 
   .vertical-separator {
     position: absolute;
