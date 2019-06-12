@@ -1,0 +1,18 @@
+.sidebar {
+  height: 100%;
+  position: relative;
+  overflow: overlay;
+  padding: 22px 0;
+  width: 220px;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  .vertical-separator {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    width: 2px;
+    height: calc(100% - 40px);
+    background-color: #CFCFCF;
+  }
+}

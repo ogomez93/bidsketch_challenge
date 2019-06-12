@@ -1,0 +1,10 @@
+.content {
+  background-color: $white-color-dark;
+  position: relative;
+  height: calc(100vh - 58px);
+  display: flex;
+
+  .sidebar-page-content {
+    margin: auto;
+  }
+}

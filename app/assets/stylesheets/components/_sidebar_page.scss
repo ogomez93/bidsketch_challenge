@@ -1,0 +1,35 @@
+.sidebar-page {
+  background-color: white;
+  margin: 20px auto;
+  border: 1px solid #CFCFCF;
+  width: 140px;
+  height: 180px;
+  position: relative;
+  cursor: pointer;
+
+  &.active,
+  &:hover {
+    border-color: $brand-color-primary;
+  }
+
+  .sidebar-page-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .complete-page {
+    width: 40px;
+  }
+
+  .incomplete-page {
+    font-size: 14px;
+    color: white;
+    background-color: #64C8D6;
+    border-radius: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: max-content;
+  }
+}

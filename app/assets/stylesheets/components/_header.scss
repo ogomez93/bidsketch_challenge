@@ -1,0 +1,23 @@
+.header {
+  .header-content {
+    position: relative;
+    background-color: white;
+    padding: 10px 30px;
+    color: $gray-color-dark;
+  }
+
+  .start-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+  }
+
+  .submit-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

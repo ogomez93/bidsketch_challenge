@@ -1,0 +1,38 @@
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  input[type='checkbox'] {
+    cursor: pointer;
+  }
+
+  .current {
+    -webkit-box-shadow: 0px 0px 1px 5px $brand-color-primary;
+    -moz-box-shadow: 0px 0px 1px 5px $brand-color-primary;
+    box-shadow: 0px 0px 1px 5px $brand-color-primary;
+  }
+
+  .current-checkbox-bubble {
+    background-color: $brand-color-primary;
+    position: absolute;
+    color: white;
+    width: max-content;
+    border-radius: 100px;
+    top: -60px;
+    padding: 5px 30px;
+    cursor: pointer;
+
+    .current-checkbox-bubble-triangle {
+      position: absolute;
+      border-top: 5px solid transparent;
+      border-right: 5px solid $brand-color-primary;
+      border-bottom: 5px solid $brand-color-primary;
+      border-left: 5px solid transparent;
+      left: 50%;
+      bottom: -5px;
+      transform: translateX(-50%) rotateZ(45deg);
+    }
+  }
+}
