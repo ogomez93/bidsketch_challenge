@@ -1,6 +1,6 @@
 module DocumentManager
   class DocumentCreator < ApplicationService
-    def initialize(params)
+    def initialize(params = {})
       @document = Document.new(params)
     end
 
